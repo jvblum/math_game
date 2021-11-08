@@ -1,5 +1,6 @@
 class Game
   attr_accessor :p1, :p2, :turn
+
   def initialize p1, p2
     self.p1 = p1
     self.p2 = p2
@@ -21,13 +22,14 @@ class Game
   end
   def correct? answer, solution
     result = answer == solution
-    puts result ? "!RIGHT!" : "!WRONG!"
+    puts "#{result ? "!RIGHT!" : "!WRONG!"}"
     result
   end
   def show_score
     puts "#{self.p1.name}: #{self.p1.hp}/#{self.p2.mhp} | #{self.p2.name}: #{self.p2.hp}/#{self.p2.mhp}"
   end
   def end?
+    puts '---'
     result = self.p1.hp < 1 || self.p2.hp < 1
     if (result)
       puts "#{self.turn.name} wins"
