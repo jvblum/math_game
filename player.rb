@@ -1,11 +1,11 @@
 class Player
-  attr_accessor :hp, :dmg, :name
-  def initialize name
+  attr_accessor :mhp, :hp, :name
+  def initialize name, mhp
     self.name = name
-    self.hp = 3
-    self.dmg = 0
+    self.mhp = mhp
+    self.hp = self.mhp
   end
   def take_damage
-    self.dmg += 1
+    self.hp -= 1
   end
 end
